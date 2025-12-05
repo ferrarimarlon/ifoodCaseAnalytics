@@ -1,0 +1,11 @@
+pyspark
+delta-spark
+requests
+pandas
+numpy
+matplotlib
+folium
+geopandas
+shapely
+pyproj
+fiona
