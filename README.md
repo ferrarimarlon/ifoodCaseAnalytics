@@ -114,8 +114,8 @@ Em Job Databricks:
 * PySpark
 * Delta Lake
 * Requests (para download dos parquet)
-* Geopandas para análise geográfica de valores e corridas
-* Folium para visualização em mapa de calor na cidade de Nova Iorque
+* Geopandas para análise geográfica de valores e corridas (instalação automática pela pipeline)
+* Folium para visualização em mapa de calor na cidade de Nova Iorque (instalação automática pela pipeline)
 
 # Análises Solicitadas pelo Case
 
