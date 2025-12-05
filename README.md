@@ -27,6 +27,7 @@ A solução utiliza:
 
 # Arquitetura Geral
 
+```
                 +-----------------------+
                 |   Fonte Oficial TLC   |
                 |  (parquet por mês)    |
@@ -73,6 +74,8 @@ A solução utiliza:
 |  • Agregações temporais e espaciais                           |
 |  • Visualizações (heatmaps, scatter, EDA)                     |
 +---------------------------------------------------------------+
+
+```
 
 
 ## 1. Bronze – Ingestão e Contrato Individual
