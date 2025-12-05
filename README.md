@@ -102,6 +102,7 @@ Manualmente, é possível executar cada Notebook seguindo a ordem:
 5. analysis/Perguntas para resultados do Case
 
 Em Job Databricks:
+<img width="1133" height="301" alt="image" src="https://github.com/user-attachments/assets/c638734e-1fe2-41ea-91a8-0fb1167e4740" />
 
 
 ---
