@@ -25,7 +25,55 @@ A solução utiliza:
 
 ---
 
-# Arquitetura
+# Arquitetura Geral
+
+                +-----------------------+
+                |   Fonte Oficial TLC   |
+                |  (parquet por mês)    |
+                +-----------+-----------+
+                            |
+                            v
++---------------------------------------------------------------+
+|                           BRONZE                              |
+|  • Ingestão bruta por tipo (Yellow / Green)                   |
+|  • Contratos distintos para cada origem                       |
+|  • Cast explícito para cada coluna                            |
+|  • Deduplicação por (VendorID, pickup_datetime, year, month)  |
+|  • Delta Lake particionado (year, month)                      |
+|  • Merge incremental idempotente                              |
++---------------------------------------------------------------+
+                            |
+                            v
++---------------------------------------------------------------+
+|                           SILVER                              |
+|  • Normalização entre Yellow e Green                          |
+|  • Unificação de schemas (rename: tpep/lpep → pickup/dropoff) |
+|  • Inclusão de campos ausentes com NULL                       |
+|  • UnionByName com validação de schema                        |
+|  • Particionamento (year, month, cab_type)                    |
+|  • Remove duplicidades cross-origem                           |
++---------------------------------------------------------------+
+                            |
+                            v
++---------------------------------------------------------------+
+|                     SILVER QUALITY                            |
+|  • Validações estruturais (schema e tipos)                    |
+|  • Nulidade em campos críticos                                |
+|  • Regras de domínio (valores inválidos)                      |
+|  • Consistência temporal (viagens negativas ou >24h)          |
+|  • Outliers estruturais (z-score)                             |
+|  • Contagem de chaves duplicadas                              |
++---------------------------------------------------------------+
+                            |
+                            v
++---------------------------------------------------------------+
+|                        CONSUMO                                |
+|  • SQL para análises e BI                                     |
+|  • Modelagem exploratória                                     |
+|  • Agregações temporais e espaciais                           |
+|  • Visualizações (heatmaps, scatter, EDA)                     |
++---------------------------------------------------------------+
+
 
 ## 1. Bronze – Ingestão e Contrato Individual
 
