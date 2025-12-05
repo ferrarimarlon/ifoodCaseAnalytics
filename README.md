@@ -141,18 +141,24 @@ Arquivo:
 
 ---
 
-# Execução
+# Reprodução da Pipeline - Execução
 
-## 1. Orquestração completa
+1. Baixar o zip do repositório atual
+2. Em um espaço de trabalho do Databricks -> Importar -> escolher Zip
 
-Manualmente, é possível executar cada Notebook importando ao Databricks e seguindo a ordem:
+<img width="445" height="148" alt="image" src="https://github.com/user-attachments/assets/0b3a258f-5afd-4c92-acee-a3e1293a3f86" />
+
+
+## 1. Execução completa
+
+Manualmente, é possível executar cada Notebook importado ao Databricks seguindo a ordem:
 1. src/Setup.dbc para criação das zonas Medallion usadas no Case
 2. src/Run.dbc (já importa o notebook BronzeLayer.dbc para popular landing zone e bronze)
 3. src/SilverLayer.dbc
 4. src/SilverLayerQuality
 5. analysis/Perguntas para resultados do Case
 
-Em Job Databricks:
+Em Job Databricks configurando a sequência acima:
 <img width="1133" height="301" alt="image" src="https://github.com/user-attachments/assets/c638734e-1fe2-41ea-91a8-0fb1167e4740" />
 
 
