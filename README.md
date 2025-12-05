@@ -4,7 +4,8 @@
 Pipeline completo em PySpark + Delta Lake (Bronze → Silver → Silver Quality)
 ---
 
-<img width="398" height="362" alt="image" src="https://github.com/user-attachments/assets/fcdd9c87-7277-4571-be0d-76efdd3cb494" />
+<img width="303" height="240" alt="image" src="https://github.com/user-attachments/assets/89fbf6e3-9bce-4442-879b-6726931fd164" />
+
 
 Resultado final da análise de pontos de viagem em relação ao total gasto obtida ao final
 
