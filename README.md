@@ -145,7 +145,7 @@ Arquivo:
 
 ## 1. Orquestração completa
 
-Manualmente, é possível executar cada Notebook seguindo a ordem:
+Manualmente, é possível executar cada Notebook importando ao Databricks e seguindo a ordem:
 1. src/Setup.dbc para criação das zonas Medallion usadas no Case
 2. src/Run.dbc (já importa o notebook BronzeLayer.dbc para popular landing zone e bronze)
 3. src/SilverLayer.dbc
